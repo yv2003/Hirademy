@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import "../App.css";
 function BooksPage() {
   const [books, setBooks] = useState([]);
-  const [isLoading, setIsLoading] = useState(false); // Track loading state
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState(" ");
 
