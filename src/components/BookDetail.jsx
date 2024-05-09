@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Add from "./Add";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 function BookDetails() {
   const { id } = useParams();
@@ -29,6 +30,7 @@ function BookDetails() {
     };
     fetchBookDetails();
   }, [id]);
+  const notify = () => toast('Book has been added to My Books');
 
 
   return (
@@ -58,7 +60,10 @@ function BookDetails() {
           <p>Book not found</p>
         )}
       </div>
-      <Add book={book} className="items-center"/>
+      <button onClick={notify} className="bg-[#366674] hover:bg-[#1d343b] text-white font-bold py-2 px-4 rounded">
+      Add to My Books
+    </button>
+    <Toaster />
     </div>
   );
 }

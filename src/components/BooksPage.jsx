@@ -58,7 +58,7 @@ function BooksPage() {
               : item.title.toLowerCase().includes(search);
           })
           .map((book) => (
-            <div className="flex flex-col hover:shadow-xl shadow-[#89d386] rounded-xl justify-center items-center p-5">
+            <div className="flex flex-col hover:shadow-xl rounded-xl items-center p-5">
               <img
                 src="./book.jpg"
                 alt="book"
@@ -78,10 +78,8 @@ function BooksPage() {
             </div>
           ))}
       </div>
-      {isLoading && <p>Loading...</p>}{" "}
-      {/* Display loading indicator if isLoading is true */}
-      {error && <p>Error: {error}</p>}{" "}
-      {/* Display error message if error exists */}
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
     </div>
   );
 }
