@@ -30,7 +30,7 @@ function BookDetails() {
     };
     fetchBookDetails();
   }, [id]);
-  const notify = () => toast('Book has been added to My Books');
+  const notify = () => toast(`${book.title} has been added to My Books`);
 
 
   return (

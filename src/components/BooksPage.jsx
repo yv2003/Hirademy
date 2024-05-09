@@ -58,7 +58,7 @@ function BooksPage() {
               : item.title.toLowerCase().includes(search.toLowerCase());
           })
           .map((book) => (
-            <div className="flex flex-col hover:shadow-xl rounded-xl items-center p-5">
+            <div className="flex flex-col h-[400px] hover:shadow-xl rounded-xl items-center p-5">
               <img
                 src="./book.jpg"
                 alt="book"
@@ -71,9 +71,6 @@ function BooksPage() {
                   {book.title}
                 </Link>
                 <br />
-                <Link to={`/books/${book.id}`}>
-                  Author : {book.authors.join(", ")}
-                </Link>
               </p>
             </div>
           ))}
