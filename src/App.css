@@ -7,10 +7,10 @@ body{
 
 }
 
-.briem-hand {
+.briem-hand-uniq {
   font-family: "Briem Hand", cursive;
-  font-optical-sizing: auto;
-  font-weight: 200;
+  font-optical-sizing:inherit;
+  font-weight: 900;
   font-style: normal;
 }
 .playfair-display {

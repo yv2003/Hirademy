@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import Bestsellers from "./Bestsellers";
 
 function BookDetails() {
   const { id } = useParams();
@@ -31,7 +30,7 @@ function BookDetails() {
   }, [id]);
 
   return (
-    <div className="p-10 bg-[#f2e5df]">
+    <div className="p-10 bg-[#f2e5df] md:h-screen">
       {/* <button className="font-bold text-4xl pb-4"> Back </button> */}
       <div className="flex flex-row">
       <img src="/leftarr.svg" alt=""  className="w-[20px]"/><Link to={`/`} className="hover:underline-offset-2 py-5">Back</Link></div>
@@ -59,8 +58,6 @@ function BookDetails() {
         )}
       </div>
       <div className="pt-20">
-        {/* <h1 className="font-bold text-3xl">BESTSELLERS</h1> */}
-        {/* <Bestsellers/> */}
       </div>
     </div>
   );

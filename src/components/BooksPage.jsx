@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 import "../App.css"
 function BooksPage() {
   const [books, setBooks] = useState([]);
@@ -27,6 +28,7 @@ function BooksPage() {
   console.log(search);
   return (
     <div className="playfair-display bg-[#366674]">
+      <Navbar/>
       <div className="flex flex-row">
       {/* <Form> */}
       <div className="flex flex-col justify-center bg-[#f2e5df]">
@@ -42,7 +44,7 @@ function BooksPage() {
             className="w-[300px] h-12 bg-gray-200 rounded-lg text-lg text-center items-center border border-black"></input>
         </div>
         </div>
-        <img src="books.jpg" alt="book" className="w-[50%] hidden md:block"/>
+        <img src="books.jpg" alt="book" className="w-[50%] h-auto hidden md:block"/>
       </div>
 
       <p className="items-center text-center text-3xl my-10 text-[#f2e5df]">BOOKS</p>
