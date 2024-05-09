@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import "../App.css"
 function BooksPage() {
   const [books, setBooks] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false); // Track loading state
+  const [isLoading, setIsLoading] = useState(false); // Track loading state
   const [error, setError] = useState(null);
   const [search, setSearch] = useState(" ");
 
@@ -18,7 +18,7 @@ function BooksPage() {
     } catch (error) {
       setError(error.message);
       console.log(error);
-      // setIsLoading(false)
+      setIsLoading(false)
     }
   }
   useEffect(() => {
@@ -30,19 +30,16 @@ function BooksPage() {
     <div className="playfair-display bg-[#366674]">
       <Navbar/>
       <div className="flex flex-row">
-      {/* <Form> */}
-      <div className="flex flex-col justify-center bg-[#f2e5df]">
+      <div className="flex flex-col justify-center items-center bg-[#f2e5df]">
         <h1 className="playfair-display font-extrabold text-[#366674] text-4xl items-center text-center p-20">
           Unlock the Knowledge: Navigate the World of Tech with Ease!
         </h1>
-        <div className="flex justify-center p-10">
           <input
             onChange={(e) => setSearch(e.target.value)}
             type="text"
             id="searchInput"
             placeholder="Search..."
-            className="w-[300px] h-12 bg-gray-200 rounded-lg text-lg text-center items-center border border-black"></input>
-        </div>
+            className=" my-4 p-5 w-[300px] h-12 bg-gray-200 rounded-lg text-lg text-center border border-black"></input>
         </div>
         <img src="books.jpg" alt="book" className="w-[50%] h-auto hidden md:block"/>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Add from "./Add";
 
 function BookDetails() {
   const { id } = useParams();
@@ -29,25 +30,25 @@ function BookDetails() {
     fetchBookDetails();
   }, [id]);
 
+
   return (
-    <div className="p-10 bg-[#f2e5df] md:h-screen">
-      {/* <button className="font-bold text-4xl pb-4"> Back </button> */}
+    <div className="p-10 bg-[#f2e5df] md:h-screen items-center">
       <div className="flex flex-row">
       <img src="/leftarr.svg" alt=""  className="w-[20px]"/><Link to={`/`} className="hover:underline-offset-2 py-5">Back</Link></div>
-      <div className="flex md:flex-row flex-col justify-center items-center">
+      <div className="flex flex-col md:flex-row  justify-center items-center">
         <img src="/book.jpg" alt="book" className="rounded-lg drop-shadow-x border border-black w-[40%] h-auto md:w-[20%] md:h-auto" />
-        {error ? (
+       {error ? (
           <p>Error fetching book details: {error}</p>
         ) : isLoading ? (
           <p>Loading book details...</p>
         ) : book ? (
           <div className="playfair-display p-5 mx-2">
             <h2 className="font-bold text-2xl lg:text-4xl pb-4">{book.title}</h2>
-            <p className="font-semibold text-xl lg:text-2xl">ISBN : {book.isbn}</p>
-            <p className="font-semibold text-xl lg:text-2xl">
+            <p className="font-semibold text-xl lg:text-2xl py-1">ISBN : {book.isbn}</p>
+            <p className="font-semibold text-xl lg:text-2xl py-1">
               Page Count : {book.pageCount}
             </p>
-            <p className="font-semibold text-xl lg:text-2xl">
+            <p className="font-semibold text-xl lg:text-2xl py-1">
               Authors : {book.authors.join(", ")}
                 </p>
                 <p className="font-semibold text-2xl">About:</p>
@@ -57,8 +58,7 @@ function BookDetails() {
           <p>Book not found</p>
         )}
       </div>
-      <div className="pt-20">
-      </div>
+      <Add book={book} className="items-center"/>
     </div>
   );
 }
