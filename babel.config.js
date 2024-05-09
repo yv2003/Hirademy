@@ -1,7 +1,9 @@
-export const presets = [
+module.exports = {
+  presets: [
     "@babel/preset-env",
     "@babel/preset-react"
-];
-export const plugins = [
+  ],
+  plugins: [
     "@babel/plugin-proposal-private-property-in-object"
-];
+  ]
+};

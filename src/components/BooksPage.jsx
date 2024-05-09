@@ -23,7 +23,7 @@ function BooksPage() {
   }
   useEffect(() => {
     fetchBooks();
-  });
+  },[]);
   console.log(books);
   console.log(search);
   return (
@@ -55,7 +55,7 @@ function BooksPage() {
           .filter((item) => {
             return search.toLowerCase() === ""
               ? item
-              : item.title.toLowerCase().includes(search);
+              : item.title.toLowerCase().includes(search.toLowerCase());
           })
           .map((book) => (
             <div className="flex flex-col hover:shadow-xl rounded-xl items-center p-5">
